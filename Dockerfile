@@ -29,10 +29,9 @@ RUN     git clone https://github.com/opennetworkinglab/onos.git onos && \
         tools/build/onos-buck publish --to-local-repo //protocols/ovsdb/rfc:onos-protocols-ovsdb-rfc && \
         tools/build/onos-buck publish --to-local-repo //apps/openstacknode:onos-apps-openstacknode && \
         cd apps/openstacknetworking && \
-        mvn clean install
-
-WORKDIR /root
-RUN	mkdir onos-service && \
+        mvn clean install && \
+	cd /root && \
+	mkdir onos-service && \
 	tar -xf onos/buck-out/gen/tools/package/onos-package/onos.tar.gz -C onos-service --strip-components=1 && \
 	rm onos/buck-out/gen/tools/package/onos-package/onos.tar.gz && \
         cd onos-service && \
