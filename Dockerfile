@@ -27,7 +27,7 @@ RUN     git clone https://github.com/opennetworkinglab/onos.git onos && \
         tools/build/onos-buck-publish-local && \
         tools/build/onos-buck publish --to-local-repo //protocols/ovsdb/api:onos-protocols-ovsdb-api && \
         tools/build/onos-buck publish --to-local-repo //protocols/ovsdb/rfc:onos-protocols-ovsdb-rfc && \
-        tools/build/onos-buck publish --to-local-repo //apps/openstacknode:onos-apps-openstacknode && \
+        tools/build/onos-buck publish --to-local-repo //apps/openstacknode/api:onos-apps-openstacknode-api && \
         cd apps/openstacknetworking && \
         mvn clean install && \
 	cd /root && \
